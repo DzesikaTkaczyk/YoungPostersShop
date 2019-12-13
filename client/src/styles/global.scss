@@ -1,0 +1,24 @@
+@import './settings.scss';
+@import './normalize.scss';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $color-text-bright;
+  background: $color-background;
+  font-family: $font-text;
+  font-size: (18px);
+  line-height: 27px;
+  letter-spacing: 0.5px;
+  overflow-y: scroll;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+}
+
+@import './typography.scss';

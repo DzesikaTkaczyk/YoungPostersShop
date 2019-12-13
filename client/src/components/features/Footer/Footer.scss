@@ -1,0 +1,19 @@
+@import '../../../styles/settings.scss';
+
+.footer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	//position: absolute;
+	//bottom: 0;
+	//width: 100vh;
+	font-size: 16px;
+
+	a {
+		color: $color-text;
+	}
+
+	p {
+		color: #bcbcbc;
+	}
+}
