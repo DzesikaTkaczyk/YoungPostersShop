@@ -26,7 +26,7 @@ class Products extends React.Component {
 
     return (
       <div>
-        {(pending === true || success === null) && <Spinner />}
+        //{(pending === true || success === null) && <Spinner />}
         {pending === false && success === true && products.length > 0 && pagination === true && 
           <div>
             <ProductsList products={products} />

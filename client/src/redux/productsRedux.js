@@ -3,6 +3,7 @@ import { API_URL } from '../config';
 
 /* SELECTORS */
 export const getProducts = ({ products }) => products.data;
+export const getProductsLength = ({ products }) => products.data.length;
 export const getRequest = ({ products }) => products.request;
 export const getSingleProducts = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
@@ -109,7 +110,7 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
       const startAt = (page - 1) * productsPerPage;
       const limit = productsPerPage;
 
-      let res = await axios.get(`${API_URL}/range/${startAt}/${limit}`);
+      let res = await axios.get(`${API_URL}/products/range/${startAt}/${limit}`);
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
       const payload = {
