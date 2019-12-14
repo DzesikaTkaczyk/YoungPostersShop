@@ -6,10 +6,10 @@ import SortPanel from '../../features/SortPanel/SortPanel';
 
 const HomePage = () => (
 	<Container>
-	<Row>
-		<Col xs={12} sm={12} md={4} lg={3} > <SortPanel /> </Col>
-		<Col xs='12' sm='12' md='8' lg={9} > <Products /> </Col>
-	</Row>
+		<Row>
+			<Col xs={12} sm={12} md={3} lg={2} > <SortPanel /> </Col>
+			<Col xs={12} sm={12} md={9} lg={10} > <Products /></Col>
+		</Row>
 	</Container>
 );
 

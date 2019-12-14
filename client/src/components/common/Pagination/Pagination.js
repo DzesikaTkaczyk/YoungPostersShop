@@ -22,15 +22,13 @@ class Pagination extends React.Component {
     const { pages } = this.props;
     const { presentPage } = this.state;
     const { changePage } = this;
-    const gt = '>'
-    const lt = '<'
-
+    
     return (
       <div className="pagination">
         <ul className="pagination__list">
           {presentPage > 1 ? (
             <li className='pagination__list__item' onClick={() => changePage(presentPage - 1) }>
-              {lt}
+              <ion-icon name="arrow-back"></ion-icon>
             </li>
           ) : ( '' )}
 
@@ -47,7 +45,7 @@ class Pagination extends React.Component {
 
           {presentPage === pages && pages !== 0 ? ('') : (
             <li className="pagination__list__item" onClick={() => changePage(presentPage + 1)}>
-              {gt}
+              <ion-icon name="arrow-forward"></ion-icon>
             </li>
           )}
         </ul>

@@ -1,14 +1,14 @@
 @import '../../../styles/settings.scss';
 
 .pagination {
-  margin: 0 auto;
+
   text-align: center;
 
   &__list {
     display: flex;
     justify-content: center;
     list-style-type: none;
-    font-size: $base-size * 1.5;
+    font-size: 22px;
 
     &__item {
       display: block;
@@ -20,14 +20,14 @@
       align-items: center;
       cursor: pointer;
       transition: .2s;
-      color: $color-text;
+      color: $color-text-bright;
 
       &:hover {
         color: $color-text;
       }
 
       &--active {
-        color: $color-primary;
+        color: $color-text;
       }
     }
 

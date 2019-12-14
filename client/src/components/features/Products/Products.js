@@ -4,6 +4,7 @@ import ProductsList from '../ProductsList/ProductsList';
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
 import Pagination from '../../common/Pagination/Pagination';
+import './Products.scss'
 
 class Products extends React.Component {
 	componentDidMount() {
@@ -28,9 +29,9 @@ class Products extends React.Component {
       <div>
         {(pending === true || success === null) && <Spinner />}
         {pending === false && success === true && pagination === true && 
-          <div>
+          <div className='allSide'>
             <ProductsList products={products} />
-            <Pagination pages={pages} onPageChange={loadProductsPage} initialPage={presentPage} />
+            <Pagination className='pagination' pages={pages} onPageChange={loadProductsPage} initialPage={presentPage} />
           </div>}
         {pending === false && success === true && pagination === false &&
           <div><ProductsList products={products} /></div>}
