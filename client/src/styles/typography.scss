@@ -9,10 +9,6 @@ a {
   color: $color-text-bright;
   transition: .3s;
 
-  &:hover {
-    color: $color-text;
-  }
-
   &.active {
     color: $color-text;
   }

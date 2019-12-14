@@ -7,21 +7,27 @@ import Button from '../../common/Button/Button';
 
 class Product extends React.Component {
   render() {
-    const { id, title, size, author, image, price } = this.props;
+    const { id, title, size, author, image, price, tag } = this.props;
 
     return(
       <div className="productBox">
         <Link to={`/products/${id}`}>
           <div className='productCover'>
+            <div className='whitebox'/>
             <img 
               className='coverPhoto'
               src={image} 
               alt={title}/>
           </div>
-          <h2>{title}</h2>
-          <p className='hoverinfo'>{author}</p>
-          <p>{price}zł</p>
-          <p className='hoverinfo'>{size}</p>
+          <p className='title'>{title}</p>
+          <p className='hoverinfo author'>{author}</p>
+          <p className='price'>{price}zł</p>
+          <p className='hoverinfo size'>{size}cm</p>
+          <p className='optionalText'>{tag}</p>
+          <div className='icons'>
+            <div className='heart'><ion-icon name="heart-empty"></ion-icon></div>
+            <div className='heartHover'><ion-icon name="heart"></ion-icon></div>
+          </div>
         </Link>
       </div>
     );
@@ -35,6 +41,7 @@ Product.propTypes = {
   size: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
   image: PropTypes.object.isRequired,
+  tag: PropTypes.string,
 };
 
 export default Product;

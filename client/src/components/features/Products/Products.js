@@ -50,6 +50,7 @@ Products.propTypes = {
       size: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       image: PropTypes.object.isRequired,
+      tag: PropTypes.string,
     })
   ),
   loadProductsByPage: PropTypes.func.isRequired,

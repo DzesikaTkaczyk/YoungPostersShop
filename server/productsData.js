@@ -10,7 +10,8 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 180,
-      image: './posters/bartekKosowski/lolita.jpg'
+      image: './posters/bartekKosowski/lolita.jpg',
+      tag: 'New'
     },
     {
       id: '2',
@@ -37,7 +38,8 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: './posters/matiszu/landscape1.jpg'
+      image: './posters/matiszu/landscape1.jpg',
+      tag: 'New'
     },
     {
       id: '5',

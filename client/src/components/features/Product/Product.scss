@@ -1,0 +1,100 @@
+@import '../../../styles/settings.scss';
+
+.productBox {
+	background-color: $color-background-darker;
+	height: 500px;
+	position: relative;
+	display: flex;
+	margin: 20px;
+	overflow: hidden;
+	transition: $transition;
+
+	.productCover {
+		.whitebox {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 100px;
+			background-color: $color-background;
+			width: 100%;
+			opacity: 0.4;
+		}
+
+		.coverPhoto {
+			height: auto; 
+			max-width: 100%;
+		}	
+	}
+
+	p {
+		position: absolute;
+		margin: 0;
+		color: $color-text;
+	}
+
+	.title {
+		bottom: 52px;
+		left: 30px;
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	.author {
+		bottom: 52px;
+		right: 30px;
+		font-size: 18px;
+	}
+
+	.price {
+		bottom: 20px;
+		left: 30px;
+	}
+
+	.size {
+		bottom: 20px;
+		right: 30px;
+	}
+
+	.optionalText {
+		top: 20px;
+		left: 30px;
+	}
+
+	.icons {
+		position: absolute;
+		top: 20px;
+		right: 30px;
+		font-size: 25px;
+		color: $color-text;
+		.heart {
+			display: inline-block;
+		}
+
+		.heartHover {
+			display: none;
+		}
+
+		&:hover {
+			transition: $transition;
+			.heart {
+				display: none;
+			}
+
+			.heartHover {
+				display: inline-block;
+			}
+		}
+	}
+
+	.hoverinfo {
+		opacity: 0;		
+	}
+
+	&:hover {
+		transition: $transition;
+		.hoverinfo {
+			opacity: 1;
+		}
+	}
+	
+}

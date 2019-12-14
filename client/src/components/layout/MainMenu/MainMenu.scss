@@ -5,6 +5,10 @@
   flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
+  
+  a:hover {
+    color: $color-text;
+  }
 
   li {
     margin: 0 $base-size;
