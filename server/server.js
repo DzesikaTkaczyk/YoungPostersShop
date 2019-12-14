@@ -23,6 +23,7 @@ mongoose.connect(config.DB, { useNewUrlParser: true });
 let db = mongoose.connection;
 
 db.once('open', () => {
+	db.db.dropDatabase();
 	console.log('Connected to the database');
 	loadProductsData();
 });

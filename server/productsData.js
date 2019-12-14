@@ -10,7 +10,7 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 180,
-      image: '../../../public/posters/bartekKosowski/lolita'
+      image: './posters/bartekKosowski/lolita.jpg'
     },
     {
       id: '2',
@@ -19,7 +19,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: { src: '../../../public/posters/patrycjaPodkoscielny/change'}
+      image: './posters/patrycjaPodkoscielny/change.jpg'
     },
     {
       id: '3',
@@ -28,7 +28,7 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: { src: '../../../public/posters/wiur/goldenHand'}
+      image: './posters/wiur/goldenHand.jpg'
     },
     {
       id: '4',
@@ -37,7 +37,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: { src: '../../../public/posters/matiszu/landscape1'}
+      image: './posters/matiszu/landscape1.jpg'
     },
     {
       id: '5',
@@ -46,7 +46,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 120,
-      image: { src: '../../../public/posters/dagaSkwarska/koiFish'}
+      image: './posters/dagaSkwarska/koiFish.jpg'
     },
   ];
 

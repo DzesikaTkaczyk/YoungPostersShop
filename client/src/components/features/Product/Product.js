@@ -10,7 +10,7 @@ class Product extends React.Component {
     const { id, title, size, author, image, price } = this.props;
 
     return(
-      <div className="Product">
+      <div className="productBox">
         <Link to={`/products/${id}`}>
           <div className='productCover'>
             <img 

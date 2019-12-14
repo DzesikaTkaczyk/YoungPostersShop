@@ -5,9 +5,9 @@ import Product from '../Product/Product';
 
 const ProductsList = ({ products }) => (
   <div>
-    <section className="products-list">
+    <div className="productsList">
       {products.map(product => <Product key={product.id} {...product} />)}
-    </section>
+    </div>
   </div>
 );
 
