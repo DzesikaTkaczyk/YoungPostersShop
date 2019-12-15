@@ -33,7 +33,7 @@ const loadProductsData = async () => {
     },
     {
       id: '4',
-      title: 'Landscape',
+      title: 'Mountains',
       author: 'Matiszu',
       technique: 'Print',
       size: '70/50',
@@ -96,6 +96,61 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 120,
       image: '/posters/dagaSkwarska/3face.jpg'
+    },
+    {
+      id: '11',
+      title: 'Shining',
+      author: 'Bartosz Kosowski',
+      technique: 'Screen printing',
+      size: '70/50',
+      price: 180,
+      image: '/posters/bartekKosowski/shining.jpg',
+      tag: 'New'
+    },
+    {
+      id: '12',
+      title: 'Margot Tenenbaum',
+      author: 'Patrycja Podkoscielny',
+      technique: 'Print',
+      size: '70/50',
+      price: 150,
+      image: '/posters/patrycjaPodkoscielny/margottenenbaum.jpg'
+    },
+    {
+      id: '13',
+      title: 'Golden jezus',
+      author: 'Wiur',
+      technique: 'Screen printing',
+      size: '70/50',
+      price: 200,
+      image: '/posters/wiur/goldenJezus.jpg'
+    },
+    {
+      id: '14',
+      title: 'Good girl',
+      author: 'Daga Skwarska',
+      technique: 'Print',
+      size: '70/50',
+      price: 120,
+      image: '/posters/dagaSkwarska/goodGirl.jpg'
+    },
+    {
+      id: '15',
+      title: 'Stranger Things',
+      author: 'Patrycja Podkoscielny',
+      technique: 'Print',
+      size: '70/50',
+      price: 150,
+      image: '/posters/patrycjaPodkoscielny/strangerThings.jpg'
+    },
+    {
+      id: '16',
+      title: 'Queen',
+      author: 'Wiur',
+      technique: 'Screen printing',
+      size: '70/50',
+      price: 200,
+      image: '/posters/wiur/queen.jpg'
     },
   ];
 
