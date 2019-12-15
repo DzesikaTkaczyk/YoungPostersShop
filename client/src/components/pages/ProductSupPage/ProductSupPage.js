@@ -1,8 +1,10 @@
 import React from 'react';
 
-const ProductSupPage = () => (
+import SubPage from '../../features/ProductSubPage/SubPageContainer'
+
+const ProductSupPage = props => (
   <div>
-    <h1>produkt</h1>
+    <SubPage id={props.match.params.id} />
   </div>
 );
 

@@ -5,7 +5,7 @@ import { API_URL } from '../config';
 export const getProducts = ({ products }) => products.data;
 export const getProductsLength = ({ products }) => products.data.length;
 export const getRequest = ({ products }) => products.request;
-export const getSingleProducts = ({ products }) => products.singleProduct;
+export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const getPresentPage = ({ products }) => products.presentPage;
 
