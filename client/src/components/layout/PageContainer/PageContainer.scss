@@ -4,5 +4,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  padding: $base-size $base-size * 2;
+  padding: $base-size $base-size;
+  position: relative;
+  min-height: 100vh;
 }

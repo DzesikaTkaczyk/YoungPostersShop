@@ -1,16 +1,14 @@
 import React from 'react';
-import {Bootstrap, Grid, Row, Col, Container} from 'react-bootstrap'
+import '../../../styles/layout.scss';
 
 import Products from '../../features/Products/ProductsContainer';
 import SortPanel from '../../features/SortPanel/SortPanel';
 
 const HomePage = () => (
-	<Container>
-		<Row>
-			<Col xs={12} sm={12} md={3} lg={2} > <SortPanel /> </Col>
-			<Col xs={12} sm={12} md={9} lg={10} > <Products /></Col>
-		</Row>
-	</Container>
+	<div className='row'>
+		<div className='col-xs-12 col-sm-12 col-md-3 col-lg-2'> <SortPanel /></div>
+		<div className='col-xs-12 col-sm-12 col-md-9 col-lg-10'> <Products /></div>
+	</div>
 );
 
 export default HomePage;

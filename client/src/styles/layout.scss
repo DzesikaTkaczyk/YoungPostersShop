@@ -22,6 +22,7 @@
       $width: 100% / 12 * $i;
       flex: 0 0 $width;
       max-width: $width;
+      padding: 10px;
     }
     .col-offset-#{$prefix}-#{$i - 1} {
       $margin-left: 100% / 12 * ($i - 1);

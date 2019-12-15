@@ -16,7 +16,7 @@ class Footer extends React.Component {
 		return (
 			<nav className='footer'>
 				<p>Dżesika Tkaczyk</p>
-				<MainMenu links={links} />
+				<MainMenu links={links} className='map'/>
 			</nav>
 		);
 	}

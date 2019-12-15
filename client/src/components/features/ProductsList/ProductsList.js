@@ -21,7 +21,7 @@ ProductsList.propTypes = {
       title: PropTypes.string.isRequired,
       size: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      image: PropTypes.object.isRequired,
+      image: PropTypes.string.isRequired,
       tag: PropTypes.string,
     })
   ),

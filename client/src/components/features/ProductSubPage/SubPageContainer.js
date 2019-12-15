@@ -1,4 +1,3 @@
-
 import { connect } from 'react-redux';
 import { getSingleProduct, getRequest, loadSingleProductRequest } from '../../../redux/productsRedux';
 import SubPage from './SubPage';

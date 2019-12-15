@@ -1,10 +1,8 @@
 import React from 'react';
-import { Animated } from 'react-animated-css';
-
-//import './Spinner.scss';
+import './Spinner.scss'
 
 const Spinner = () => (
-  <img src="./three-dots.svg" />
+  <div className='spinerCenter'><img src='/ball-triangle.svg' alt='spiner'/></div>
 );
 
 export default Spinner;

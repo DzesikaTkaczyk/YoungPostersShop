@@ -5,7 +5,7 @@
 	height: 500px;
 	position: relative;
 	display: flex;
-	margin-bottom: 20px;
+
 	overflow: hidden;
 	transition: $transition;
 
@@ -37,12 +37,6 @@
 		left: 30px;
 		font-size: 18px;
 		font-weight: bold;
-	}
-
-	.author {
-		bottom: 52px;
-		right: 30px;
-		font-size: 18px;
 	}
 
 	.price {

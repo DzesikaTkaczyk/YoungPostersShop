@@ -7,7 +7,8 @@ const Product = new Schema({
 	title: { type: 'String', required: true },
     technique: { type: 'String', required: true },
 	price: { type: 'Number', required: true },
-	image: { type: 'Object', required: true },
+	size: { type: 'String', required: true },
+	image: { type: 'String', required: true },
 	tag: { type: 'String', required: false },
 });
 

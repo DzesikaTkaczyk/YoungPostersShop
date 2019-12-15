@@ -2,6 +2,7 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import './SubPage.scss'
+import '../../../styles/layout.scss';
 
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
@@ -20,29 +21,34 @@ class SingleProduct extends React.Component {
     const success = request.success;
     const error = request.error;
     const { location } = this.props;
+    console.log(location)
 
     return (
       <div>
         {(pending === true || success === null) && <Spinner />}
         {pending === false && success === true && product !== null && (
-          <div>
-            <div className='productCover'>
-              <img 
-                className='coverPhoto'
-                src={product.image} 
-                alt={product.title}/>
+          <div className='row'>
+            <div className='col-xs-12 col-sm-6 col-md-5 col-lg-5'>
+              <div className='singleProductCover'>
+                <img 
+                  className='singleCoverPhoto'
+                  src={product.image} 
+                  alt={product.title}/>
+              </div>
             </div>
-            <h2>{product.title}</h2>
-            <p>{product.author}</p>
-            <p>{product.technique}</p>
-            <div className='size'>
-              <p>{product.size}cm</p>
+            <div className='col-xs-12 col-sm-6 col-md-7 col-lg-7'> 
+              <h2>{product.title}</h2>
+              <p>{product.author}</p>
+              <p>{product.technique}</p>
+              <div className='size'>
+                <p>{product.size}cm</p>
+              </div>
+              <p>{product.price}zł</p>
+              <button> Dodaj do koszyka </button>
             </div>
-            <p>{product.price}zł</p>
           </div>)
         }
         {pending === false && error !== null  && <Alert variant='error'>{error}</Alert>}
-        {pending === false && success === true && product === null && <Alert variant='info'>No product</Alert>}
       </div>
     )
   }
@@ -57,7 +63,7 @@ SingleProduct.propTypes = {
       technique: PropTypes.string.isRequired,
       size: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-      image: PropTypes.object.isRequired,
+      image: PropTypes.string.isRequired,
     })
   ),
   loadProduct: PropTypes.func.isRequired

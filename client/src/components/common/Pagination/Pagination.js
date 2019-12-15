@@ -39,7 +39,8 @@ class Pagination extends React.Component {
             className={`pagination__list__item${
               page === presentPage ? ' pagination__list__item--active' : ''}`}
           >
-            {page}
+          {page < 10 && (`0${page}`)}
+          {page > 9 && (`${page}`)}
           </li>
           ))}
 

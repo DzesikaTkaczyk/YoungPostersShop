@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import './Button.scss';
 
-const Button = ({ variant = '', children, ...otherProps }) => (
-  <button { ...otherProps } className={ `button button--${variant}`}>
+const Button = ({children, ...otherProps }) => (
+  <button { ...otherProps } className={`button`}>
     { children }
   </button>
 );

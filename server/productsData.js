@@ -10,7 +10,7 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 180,
-      image: './posters/bartekKosowski/lolita.jpg',
+      image: '/posters/bartekKosowski/lolita.jpg',
       tag: 'New'
     },
     {
@@ -20,7 +20,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: './posters/patrycjaPodkoscielny/change.jpg'
+      image: '/posters/patrycjaPodkoscielny/change.jpg'
     },
     {
       id: '3',
@@ -29,7 +29,7 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: './posters/wiur/goldenHand.jpg'
+      image: '/posters/wiur/goldenHand.jpg'
     },
     {
       id: '4',
@@ -38,7 +38,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: './posters/matiszu/landscape1.jpg',
+      image: '/posters/matiszu/mountains.jpg',
       tag: 'New'
     },
     {
@@ -48,7 +48,54 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 120,
-      image: './posters/dagaSkwarska/koiFish.jpg'
+      image: '/posters/dagaSkwarska/koiFish.jpg'
+    },
+    {
+      id: '6',
+      title: 'Jaws',
+      author: 'Bartosz Kosowski',
+      technique: 'Screen printing',
+      size: '70/50',
+      price: 180,
+      image: '/posters/bartekKosowski/jaws.jpg',
+      tag: 'New'
+    },
+    {
+      id: '7',
+      title: 'Flora',
+      author: 'Patrycja Podkoscielny',
+      technique: 'Print',
+      size: '70/50',
+      price: 150,
+      image: '/posters/patrycjaPodkoscielny/flora.jpg'
+    },
+    {
+      id: '8',
+      title: 'King',
+      author: 'Wiur',
+      technique: 'Screen printing',
+      size: '70/50',
+      price: 200,
+      image: '/posters/wiur/king.jpg'
+    },
+    {
+      id: '9',
+      title: 'Smoke',
+      author: 'Matiszu',
+      technique: 'Print',
+      size: '70/50',
+      price: 150,
+      image: '/posters/matiszu/smoke.jpg',
+      tag: 'New'
+    },
+    {
+      id: '10',
+      title: 'Three face',
+      author: 'Daga Skwarska',
+      technique: 'Print',
+      size: '70/50',
+      price: 120,
+      image: '/posters/dagaSkwarska/3face.jpg'
     },
   ];
 

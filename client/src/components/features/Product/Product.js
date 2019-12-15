@@ -2,16 +2,14 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Product.scss';
 import { Link } from "react-router-dom";
-import {Bootstrap, Grid, Row, Col} from 'react-bootstrap'
-
-import Button from '../../common/Button/Button';
+import '../../../styles/layout.scss';
 
 class Product extends React.Component {
   render() {
     const { id, title, size, author, image, price, tag } = this.props;
 
     return(
-      <Col xs={12} sm={6} md={6} lg={4} >
+      <div className='col-xs-12 col-sm-6 col-md-6 col-lg-4' >
         <div className="productBox">
         
           <Link to={`/products/${id}`}>
@@ -23,7 +21,6 @@ class Product extends React.Component {
                 alt={title}/>
             </div>
             <p className='title'>{title}</p>
-            <p className='hoverinfo author'>{author}</p>
             <p className='price'>{price}zł</p>
             <p className='hoverinfo size'>{size}cm</p>
             <p className='optionalText'>{tag}</p>
@@ -34,7 +31,7 @@ class Product extends React.Component {
           </Link>
           
         </div>
-      </Col>
+      </div>
 
     );
   };
@@ -46,7 +43,7 @@ Product.propTypes = {
   title: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  image: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
   tag: PropTypes.string,
 };
 
