@@ -3,5 +3,70 @@
 .singleCoverPhoto {
 	max-width: 100%;
 	height: auto;
+}
 
+.description {
+	margin: 20px 10px;
+	.titleLine {
+		font-size: 28px;
+		display: inline-block;
+		margin-bottom: 10px;
+	}
+
+	.title {
+		font-weight: bold;
+		margin-right: 20px;
+		color: $color-text;
+	}
+
+	.sometext {
+		font-size: 17px;
+		line-height: 26px;
+		color: $color-text;
+	}
+	
+	.addToCart {
+		display: none;
+	}
+
+	.priceSection{
+		display: flex;
+		justify-content: space-between;
+
+		.size {
+			border: 1px solid $color-text-bright;
+			margin: 0;
+			padding: 5px 10px;
+			&:hover {
+				border: 1px solid $color-text;
+				color: $color-text;
+			}
+			&:active {
+				border: 1px solid $color-text;
+				background-color: $color-text;
+				color: $color-background;
+			}
+		}
+
+		.price {
+			color: $color-text;
+			line-height: 38px;
+			font-size: 20px;
+			margin: 0;
+			//font-weight: bold;
+		}
+	}
+
+	button {
+		padding: 15px 50px;
+		font-size: 20px;
+		background-color: $color-text;
+		border: 1px solid $color-text;
+		color: $color-background;
+		margin-top: 35px;
+		&:hover {
+			background-color: $color-background;
+			color: $color-text;
+		}
+	}
 }

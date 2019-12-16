@@ -20,13 +20,17 @@
 }
 
 @media(max-width: 575px) {
-	.main-menu {
-		display: none;
+	.footer {
+		.main-menu {
+			display: none;
+		}
 	}
 }
 
 @media(min-width: 576px) {
-	.main-menu {
-		display: flex;
+	.footer {	
+		.main-menu {
+			display: flex;
+		}
 	}
 }

@@ -27,27 +27,39 @@ class SingleProduct extends React.Component {
       <div>
         {(pending === true || success === null) && <Spinner />}
         {pending === false && success === true && product !== null && (
-          <div className='row'>
-            <div className='col-xs-12 col-sm-6 col-md-5 col-lg-5'>
-              <div className='singleProductCover'>
-                <img 
-                  className='singleCoverPhoto'
-                  src={product.image} 
-                  alt={product.title}/>
+          <div className="OneProduct">
+            
+            <div className='row'>
+              <div className='col-xs-12 col-sm-6 col-md-5 col-lg-5'>
+                <div className='singleProductCover'>
+                  <img 
+                    className='singleCoverPhoto'
+                    src={product.image} 
+                    alt={product.title}/>
+                </div>
+              </div>
+              <div className='col-xs-12 col-sm-6 col-md-7 col-lg-7'> 
+                <div className='description'>
+                <div className='addToCart'>
+              <Alert>Added to cart.</Alert>
+            </div>
+                  <p className='title titleLine'>{product.title}</p>
+                  <p className='titleLine'>{product.author}</p>
+                  <p>{product.technique}</p>
+                  <p className='sometext'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  <div className='priceSection'>
+                    <div>
+                      <p className='size'>{product.size}cm</p>
+                    </div>
+                    <p className='price'>{product.price}zł</p>
+                  </div>
+                  <button> Add to cart </button>
+                </div>
               </div>
             </div>
-            <div className='col-xs-12 col-sm-6 col-md-7 col-lg-7'> 
-              <h2>{product.title}</h2>
-              <p>{product.author}</p>
-              <p>{product.technique}</p>
-              <div className='size'>
-                <p>{product.size}cm</p>
-              </div>
-              <p>{product.price}zł</p>
-              <button> Dodaj do koszyka </button>
-            </div>
-          </div>)
-        }
+            
+          </div>
+        )}
         {pending === false && error !== null  && <Alert variant='error'>{error}</Alert>}
       </div>
     )
