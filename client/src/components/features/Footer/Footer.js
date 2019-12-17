@@ -7,8 +7,8 @@ class Footer extends React.Component {
 		links: [
 			{ path: '/', title: 'Home' },
 			{ path: '/faq', title: 'FAQ' },
-			{ path: '/rules', title: 'Regulamin' },
-			{ path: '/contact', title: 'Kontact' },
+			{ path: '/rules', title: 'Registry' },
+			{ path: '/contact', title: 'Contact' },
 		],
 	}
 	render() {

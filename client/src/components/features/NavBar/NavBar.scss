@@ -1,9 +1,49 @@
 @import '../../../styles/settings.scss';
 
-.navbar {
-	display: flex;
+.myNavbar {
 	justify-content: space-between;
-	flex-wrap: wrap;
-	margin: 10px 0 100px;
+	margin: 10px 0 50px;
 	padding: 0;
+	position: relative;
+
+	.cart {
+		height: 22px;
+	}	
+}
+
+@media(max-width: 766px) {
+  .myNavbar {
+    display: block;
+    border-bottom: 1px solid $color-text-bright;
+
+	.burger {
+		position: absolute;
+		top: 0;
+		right: 10px;
+		outline: none;
+	}
+	
+	.cartLink {
+		text-align: right;
+	}
+  }
+}
+
+@media(min-width: 768px) {
+  .myNavbar {
+    display: block;
+    //flex-wrap: wrap;
+
+    .main-menu {
+    	position: absolute;
+    	top: 0;
+    	right: 20px;
+    }
+
+	.cartLink {
+		position: absolute;
+		top: -2px;
+		right: 2px;
+	}
+  }
 }

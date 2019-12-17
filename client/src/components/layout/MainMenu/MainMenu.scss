@@ -1,17 +1,30 @@
 @import '../../../styles/settings.scss';
 
 .main-menu {
-  display: flex;
-  flex-wrap: wrap;
   list-style-type: none;
   padding: 0;
   
   a:hover {
     color: $color-text;
   }
+}
+
+@media(max-width: 766px) {
+  .main-menu {
+    display: block;
+    text-align: right;
+    margin: 0;
+  }
+}
+
+@media(min-width: 768px) {
+  .main-menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 25px;
+  }
 
   li {
     margin: 0 $base-size;
   }
-
 }
