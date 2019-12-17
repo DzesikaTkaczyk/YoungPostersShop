@@ -12,7 +12,7 @@ class NavBar extends React.Component {
 		links: [
 			{ path: '/', title: 'Home' },
 			{ path: '/faq', title: 'FAQ' },
-			{ path: '/rules', title: 'Registry' },
+			{ path: '/rules', title: 'Rules' },
 			{ path: '/contact', title: 'Contact' },
 		],
 	}

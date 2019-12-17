@@ -1,4 +1,52 @@
-.sortpanel {
-	display: inline-block;
+@import '../../../styles/settings.scss';
+@import '../../../styles/typography.scss';
 
+@media(max-width: 767px) {
+  .sortpanel {
+    display: block;
+    border-bottom: 1px solid $color-text-bright;
+
+	.sortBurger {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		outline: none;
+		opacity: 0;
+	}
+
+	.sortOptions {
+		margin-bottom: 10px;
+	}
+	
+	.cartLink {
+		text-align: right;
+	}
+
+	a {
+		padding: 5px 0;
+		display: block;
+		&:hover {
+			color: $color-text;
+		}
+	}
+  }
+}
+
+@media(min-width: 768px) {
+  .sortpanel {
+    display: inline-block;
+
+    .sortOptions {
+		flex-wrap: wrap;
+	}
+	
+	a {
+		padding: 5px 0;
+		display: block;
+		&:hover {
+			color: $color-text;
+		}
+	}
+
+  }
 }
