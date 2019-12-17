@@ -3,6 +3,7 @@
 .alert {
   background: $color-background;
   color: $color-text;
+  border: 0px;
   border-left: 4px solid #111;
   padding: 0.9rem 0.8rem;
   margin: 1rem 0 1.5rem 0;
@@ -19,25 +20,21 @@
   }
 
   &--error {
-    background: $color-error-back;
     color: $color-text-bright;
     border-color: $color-error;
   }
 
   &--warning {
-    background: $color-warning-back;
     color: $color-text-bright;
     border-color: $color-warning;
   }
 
   &--info {
-    background: $color-info-back;
     color: $color-text-bright;
     border-color: $color-info;
   }
 
   &--success {
-    background: $color-success-back;
     color: $color-text-bright;
     border-color: $color-success;
   }

@@ -2,7 +2,6 @@
 
 .productBox {
 	background-color: $color-background-darker;
-	height: 500px;
 	position: relative;
 	display: flex;
 	border: 1px solid $color-background-darker;
@@ -93,14 +92,26 @@
 	
 }
 
-@media(max-width: 767px) {
+@media(max-width: 575px) {
 	.productBox {
-		height: 500px;
+		height: auto;
 	}
 }
 
-@media(min-width: 767px) {
+@media(min-width: 576px) {
 	.productBox {
-		height: 300px;
+		height: 340px;
+	}
+}
+
+@media(min-width: 768px) {
+	.productBox {
+		height: 342px;
+	}
+}
+
+@media(min-width: 992px) {
+	.productBox {
+		height: 330px;
 	}
 }

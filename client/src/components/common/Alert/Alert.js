@@ -34,7 +34,7 @@ const Alert = ({ variant = '', children, ...otherProps }) => {
 };
 
 Alert.propTypes = {
-  variant: PropTypes.string.isRequired,
+  variant: PropTypes.string,
   children: PropTypes.string.isRequired,
 };
 

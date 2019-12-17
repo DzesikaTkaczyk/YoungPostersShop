@@ -24,7 +24,7 @@
 		line-height: 26px;
 		color: $color-text;
 	}
-	
+
 	.addToCart {
 		display: none;
 	}
@@ -32,6 +32,7 @@
 	.priceSection{
 		display: flex;
 		justify-content: space-between;
+		padding-top: 5px;
 
 		.size {
 			border: 1px solid $color-text-bright;

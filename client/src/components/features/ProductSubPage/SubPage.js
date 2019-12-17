@@ -6,7 +6,7 @@ import '../../../styles/layout.scss';
 
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
-import { BASE_URL } from '../../../config';
+//import addProduct from './buttonFunction.js'
 
 
 class SingleProduct extends React.Component {
@@ -21,7 +21,6 @@ class SingleProduct extends React.Component {
     const success = request.success;
     const error = request.error;
     const { location } = this.props;
-    console.log(location)
 
     return (
       <div>
@@ -40,9 +39,9 @@ class SingleProduct extends React.Component {
               </div>
               <div className='col-xs-12 col-sm-6 col-md-7 col-lg-7'> 
                 <div className='description'>
-                <div className='addToCart'>
-              <Alert>Added to cart.</Alert>
-            </div>
+                  <div className='addToCart'>
+                    <Alert>Added to cart.</Alert>
+                  </div>
                   <p className='title titleLine'>{product.title}</p>
                   <p className='titleLine'>{product.author}</p>
                   <p>{product.technique}</p>
@@ -56,8 +55,7 @@ class SingleProduct extends React.Component {
                   <button> Add to cart </button>
                 </div>
               </div>
-            </div>
-            
+            </div>         
           </div>
         )}
         {pending === false && error !== null  && <Alert variant='error'>{error}</Alert>}

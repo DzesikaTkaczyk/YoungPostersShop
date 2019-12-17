@@ -1,13 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import './ProductsList.scss'
+//import './CartList.scss'
 
-import Product from '../Product/Product';
+import ProductCart from './ProductCart';
 
 const ProductsList = ({ products }) => (
   <div>
     <div className="productsList">
-      {products.map(product => <Product key={product.id} {...product} />)}
+      {products.map(product => <ProductCart key={product.id} {...product} />)}
     </div>
   </div>
 );

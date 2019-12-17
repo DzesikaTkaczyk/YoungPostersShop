@@ -23,7 +23,6 @@ class Products extends React.Component {
     const success = request.success;
     const error = request.error;
     const { loadProductsPage } = this;
-    console.log(this.props)
 
     return (
       <div>

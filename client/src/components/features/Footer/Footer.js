@@ -5,7 +5,7 @@ import './Footer.scss';
 class Footer extends React.Component {
 	state = {
 		links: [
-			{ path: '/products', title: 'Home' },
+			{ path: '/', title: 'Home' },
 			{ path: '/faq', title: 'FAQ' },
 			{ path: '/rules', title: 'Regulamin' },
 			{ path: '/contact', title: 'Kontact' },

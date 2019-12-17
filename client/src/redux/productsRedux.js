@@ -77,7 +77,7 @@ export const loadProductsRequest = () => {
 	return async dispatch => {
 		dispatch(startRequest());
 		try {
-			let res = await axios.get(`${API_URL}/products`);
+			let res = await axios.get(`${API_URL}`);
 			await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 			dispatch(loadProducts(res.data));
 			dispatch(endRequest());
@@ -92,7 +92,7 @@ export const loadSingleProductRequest = (id) => {
 
     dispatch(startRequest());
     try {
-      let res = await axios.get(`${API_URL}/products/${id}`);
+      let res = await axios.get(`${API_URL}/${id}`);
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
       dispatch(loadSingleProduct(res.data));
       dispatch(endRequest());
@@ -110,7 +110,7 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
       const startAt = (page - 1) * productsPerPage;
       const limit = productsPerPage;
 
-      let res = await axios.get(`${API_URL}/products/range/${startAt}/${limit}`);
+      let res = await axios.get(`${API_URL}/range/${startAt}/${limit}`);
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
       const payload = {
@@ -128,4 +128,19 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
     }
 
   };
+};
+
+
+export const loadCartRequest = () => {
+	return async dispatch => {
+		dispatch(startRequest());
+		try {
+			let res = await axios.get(`${API_URL}/cart`);
+			await new Promise((resolve, reject) => setTimeout(resolve, 2000));
+			dispatch(loadProducts(res.data));
+			dispatch(endRequest());
+		} catch(e) {
+			dispatch(errorRequest(e.message));
+		}
+	};
 };

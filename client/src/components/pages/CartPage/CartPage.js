@@ -1,9 +1,16 @@
 import React from 'react';
+import '../../../styles/layout.scss';
+
+import Cart from '../../features/Cart/CartContainer';
 
 const CartPage = () => (
-  <div>
-    <h1>koszyk</h1>
+  <div className='row'>
+    <div className='col-xs-12 col-sm-12'>
+      	<Cart />
+    </div>
   </div>
 );
+
+//{localStorage.getItem("productId")};
 
 export default CartPage;
