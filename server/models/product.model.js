@@ -9,6 +9,7 @@ const Product = new Schema({
 	price: { type: 'Number', required: true },
 	size: { type: 'String', required: true },
 	image: { type: 'String', required: true },
+	carusel: { type: 'Array', required: false },
 	tag: { type: 'String', required: false },
 });
 

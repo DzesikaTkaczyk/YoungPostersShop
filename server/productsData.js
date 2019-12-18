@@ -11,6 +11,11 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 180,
       image: '/posters/bartekKosowski/lolita.jpg',
+      carusel: [
+      '/posters/bartekKosowski/lolita.jpg',
+      '/posters/bartekKosowski/lolita2.jpg', 
+      '/posters/bartekKosowski/lolita3.jpg'
+      ],
       tag: 'New'
     },
     {
@@ -20,7 +25,11 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: '/posters/patrycjaPodkoscielny/change.jpg'
+      image: '/posters/patrycjaPodkoscielny/change.jpg',
+      carusel: [
+      '/posters/patrycjaPodkoscielny/change.jpg', 
+      '/posters/patrycjaPodkoscielny/change2.jpg'
+      ],
     },
     {
       id: '3',
@@ -29,7 +38,11 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: '/posters/wiur/goldenHand.jpg'
+      image: '/posters/wiur/goldenHand.jpg',
+      carusel: [
+      '/posters/wiur/goldenHand.jpg', 
+      '/posters/wiur/goldenHand2.jpg'
+      ],
     },
     {
       id: '4',
@@ -39,6 +52,10 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 150,
       image: '/posters/matiszu/mountains.jpg',
+      carusel: [
+      '/posters/matiszu/mountains.jpg', 
+      '/posters/matiszu/mountains2.jpg'
+      ],
       tag: 'New'
     },
     {
@@ -48,7 +65,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 120,
-      image: '/posters/dagaSkwarska/koiFish.jpg'
+      image: '/posters/dagaSkwarska/koiFish.jpg',
     },
     {
       id: '6',
@@ -58,6 +75,11 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 180,
       image: '/posters/bartekKosowski/jaws.jpg',
+      carusel: [
+      '/posters/bartekKosowski/jaws.jpg',
+      '/posters/bartekKosowski/jaws2.jpg', 
+      '/posters/bartekKosowski/jaws3.jpg'
+      ],
       tag: 'New'
     },
     {
@@ -67,7 +89,11 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: '/posters/patrycjaPodkoscielny/flora.jpg'
+      image: '/posters/patrycjaPodkoscielny/flora.jpg',
+      carusel: [
+      '/posters/patrycjaPodkoscielny/flora.jpg', 
+      '/posters/patrycjaPodkoscielny/flora2.jpg'
+      ],
     },
     {
       id: '8',
@@ -76,7 +102,12 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: '/posters/wiur/king.jpg'
+      image: '/posters/wiur/king.jpg',
+      carusel: [
+      '/posters/wiur/king.jpg', 
+      '/posters/wiur/king2.jpg',
+      '/posters/wiur/king3.jpg',
+      ],
     },
     {
       id: '9',
@@ -86,7 +117,11 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 150,
       image: '/posters/matiszu/smoke.jpg',
-      tag: 'New'
+      carusel: [
+      '/posters/matiszu/smoke.jpg', 
+      '/posters/matiszu/smoke2.jpg',
+      ],
+      tag: 'New',
     },
     {
       id: '10',
@@ -95,7 +130,7 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 120,
-      image: '/posters/dagaSkwarska/3face.jpg'
+      image: '/posters/dagaSkwarska/3face.jpg',
     },
     {
       id: '11',
@@ -105,6 +140,11 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 180,
       image: '/posters/bartekKosowski/shining.jpg',
+      carusel: [
+      '/posters/bartekKosowski/shining.jpg',
+      '/posters/bartekKosowski/shining2.jpg', 
+      '/posters/bartekKosowski/shining3.jpg'
+      ],
       tag: 'New'
     },
     {
@@ -114,7 +154,11 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: '/posters/patrycjaPodkoscielny/margottenenbaum.jpg'
+      image: '/posters/patrycjaPodkoscielny/margottenenbaum.jpg',
+      carusel: [
+      '/posters/patrycjaPodkoscielny/margottenenbaum.jpg', 
+      '/posters/patrycjaPodkoscielny/margottenenbaum2.jpg'
+      ],
     },
     {
       id: '13',
@@ -123,7 +167,12 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: '/posters/wiur/goldenJezus.jpg'
+      image: '/posters/wiur/goldenJezus.jpg',
+      carusel: [
+      '/posters/wiur/goldenJezus.jpg', 
+      '/posters/wiur/goldenJezus2.jpg'
+      ],
+      tag: 'Wow'
     },
     {
       id: '14',
@@ -141,7 +190,12 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 150,
-      image: '/posters/patrycjaPodkoscielny/strangerThings.jpg'
+      image: '/posters/patrycjaPodkoscielny/strangerThings.jpg',
+      carusel: [
+      '/posters/patrycjaPodkoscielny/strangerThings.jpg', 
+      '/posters/patrycjaPodkoscielny/strangerThings2.jpg',
+      '/posters/patrycjaPodkoscielny/strangerThings3.jpg',
+      ],
     },
     {
       id: '16',
@@ -150,7 +204,11 @@ const loadProductsData = async () => {
       technique: 'Screen printing',
       size: '70/50',
       price: 200,
-      image: '/posters/wiur/queen.jpg'
+      image: '/posters/wiur/queen.jpg',
+      carusel: [
+      '/posters/wiur/queen.jpg', 
+      '/posters/wiur/queen2.jpg'
+      ],
     },
   ];
 

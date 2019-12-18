@@ -26,8 +26,7 @@ class SingleProduct extends React.Component {
       <div>
         {(pending === true || success === null) && <Spinner />}
         {pending === false && success === true && product !== null && (
-          <div className="OneProduct">
-            
+          <div className='OneProduct'>
             <div className='row'>
               <div className='col-xs-12 col-sm-6 col-md-5 col-lg-5'>
                 <div className='singleProductCover'>
@@ -74,6 +73,7 @@ SingleProduct.propTypes = {
       size: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
       image: PropTypes.string.isRequired,
+      carusel: PropTypes.array,
     })
   ),
   loadProduct: PropTypes.func.isRequired
