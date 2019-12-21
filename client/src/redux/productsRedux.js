@@ -8,6 +8,7 @@ export const getRequest = ({ products }) => products.request;
 export const getSingleProduct = ({ products }) => products.singleProduct;
 export const getPages = ({ products }) => Math.ceil(products.amount / products.productsPerPage);
 export const getPresentPage = ({ products }) => products.presentPage;
+
 export const getProductsSort = ({ products }) => {
 	const sortedProducts = [...products.data].sort((a, b) => {
 		if (a[products.key] > b[products.key]) return products.direction === 'asc' ? 1 : -1;
@@ -33,6 +34,7 @@ export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const RESET_REQUEST = createActionName('RESET_REQUEST')
 export const LOAD_PRODUCTS_PAGE = createActionName('LOAD_PRODUCTS_PAGE');
+
 export const LOAD_CART = createActionName('LOAD_CART');
 export const SORT_PRODUCTS = createActionName('SORT_PRODUCTS')
 export const ADD_TO_CART = createActionName('ADD_TO_CART');
@@ -50,6 +52,7 @@ export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const resetRequest = () => ({ type: RESET_REQUEST });
 export const loadProductsByPage = payload => ({ payload, type: LOAD_PRODUCTS_PAGE });
+
 export const loadCart = payload => ({ payload, type: LOAD_CART });
 export const sortProducts = payload => ({ payload, type: SORT_PRODUCTS })
 export const addToCart = payload => ({ payload, type: ADD_TO_CART });
@@ -103,6 +106,8 @@ export default function reducer(statePart = initialState, action = {}) {
 				presentPage: action.payload.presentPage,
 				amount: action.payload.amount,
 				data: [...action.payload.products], };
+		
+
 		case LOAD_CART:
 			return {
 				...statePart,
@@ -117,13 +122,7 @@ export default function reducer(statePart = initialState, action = {}) {
 
 		case ADD_TO_CART:
 			const selectedProduct = action.payload;
-			console.log("action.payload")
-			console.log(action.payload)
 			selectedProduct.counter += 1;
-			console.log("selectedProduct.counter")
-			console.log(selectedProduct.counter)
-			console.log("cart")
-			console.log(statePart.cart)
 
 			return { ...statePart, cart: statePart.cart.concat(selectedProduct)};
 		case MORE:

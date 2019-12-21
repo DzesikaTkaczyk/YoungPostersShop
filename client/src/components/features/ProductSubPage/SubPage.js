@@ -26,13 +26,18 @@ class SingleProduct extends React.Component {
   }
 
   handleAddToCart = () => {
-    const { product, cart, addToCart, more, sumPrice, id } = this.props
-    const addedToCart = cart.filter(product => product.id === id);
-     console.log('thisprops')
-     console.log(this.props)
-    addToCart(product);
-    console.log('thisprops')
-     console.log(this.props)
+    const { products, cart, addToCart, more, sumPrice, match} = this.props
+    const isAdded = cart.filter(product => product.id === match.params.id);
+
+     if(isAdded.length === 0) {
+          addToCart(products);
+      } else {
+          more(match.params.id);
+      };
+
+      sumPrice();
+      
+
   }
 
   render() {
@@ -41,6 +46,7 @@ class SingleProduct extends React.Component {
     const success = request.success;
     const error = request.error;
     const { location } = this.props;
+    const { handleAddToBasket } = this;
 
     return (
       <div>

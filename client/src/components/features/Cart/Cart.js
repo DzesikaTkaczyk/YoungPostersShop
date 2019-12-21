@@ -21,8 +21,7 @@ class Cart extends React.Component {
     const pending = request.pending;
     const success = request.success;
     const error = request.error;
-    //console.log(this.props);
-    console.log(cart)
+
     return (
       <div>
         {(pending === true || success === null) && <Spinner />}
