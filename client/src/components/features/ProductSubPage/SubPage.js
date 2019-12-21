@@ -28,7 +28,11 @@ class SingleProduct extends React.Component {
   handleAddToCart = () => {
     const { product, cart, addToCart, more, sumPrice, id } = this.props
     const addedToCart = cart.filter(product => product.id === id);
+     console.log('thisprops')
+     console.log(this.props)
     addToCart(product);
+    console.log('thisprops')
+     console.log(this.props)
   }
 
   render() {

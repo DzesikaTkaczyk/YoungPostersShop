@@ -9,10 +9,6 @@ import '../../../styles/layout.scss';
 import './Cart.scss';
 
 class Cart extends React.Component {
-  componentDidMount() {
-    const { loadCart } = this.props;
-    loadCart();
-  }
 
   AddDiscount = () => {
     const { addDiscountCode, sumPrice } = this.props;
@@ -26,7 +22,7 @@ class Cart extends React.Component {
     const success = request.success;
     const error = request.error;
     //console.log(this.props);
-    //console.log(cart)
+    console.log(cart)
     return (
       <div>
         {(pending === true || success === null) && <Spinner />}
@@ -36,7 +32,7 @@ class Cart extends React.Component {
               <CartProduct 
                 products={product}
                 key={product.id}
-                deleteProduct={this.deleteProduct}
+                handleRemove={this.handleRemove}
               />
             </div>
           ))
@@ -60,24 +56,5 @@ class Cart extends React.Component {
   }
 };
 
-
-Cart.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      technique: PropTypes.string.isRequired,
-      size: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      carusel: PropTypes.array,
-      counter: PropTypes.number.isRequired
-    })
-  ),
-  loadCart: PropTypes.func.isRequired,
-  more: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired
-};
 
 export default Cart;

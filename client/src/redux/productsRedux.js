@@ -107,7 +107,7 @@ export default function reducer(statePart = initialState, action = {}) {
 			return {
 				...statePart,
 				amount: action.payload.amount,
-				cart: [...action.payload.products], };
+				cart: [...action.payload.cart], };
 
 		case SORT_PRODUCTS:
 			return {
@@ -125,7 +125,7 @@ export default function reducer(statePart = initialState, action = {}) {
 			console.log("cart")
 			console.log(statePart.cart)
 
-			return { ...statePart, data: statePart.data.concat(selectedProduct)};
+			return { ...statePart, cart: statePart.cart.concat(selectedProduct)};
 		case MORE:
 			const wantMore = statePart.cart.find(product => product.id === action.id);
 			wantMore.counter += 1;
@@ -221,9 +221,9 @@ export const loadCartRequest = () => {
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
       console.log('gora')
-      	console.log(res)
+      console.log(res)
 
-      dispatch(loadCart(res.data));
+      dispatch(loadCart(res.cart));
       dispatch(endRequest());
 
     } catch(e) {

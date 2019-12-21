@@ -10,10 +10,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-	loadCart: () =>dispatch(loadCartRequest()),
 	more: (id) => dispatch(more(id)),
 	less: (id) => dispatch(less(id)),
-	removeProduct: (id) => dispatch(removeProduct()),
+	removeProduct: (id) => dispatch(removeProduct(id)),
 	addDiscountCode: () => dispatch(addDiscountCode()),
 	sumPrice: () => dispatch(sumPrice()),
 });

@@ -41,7 +41,6 @@ class Discount extends React.Component {
         if(discountStatus === false && isTrue === true) {
             return(
                 <div className='discount-code'>
-                    <Label>Enter 'coscrafts' to get a 10% discount for your first order!</Label>
                     <div className='discount-code-input'>
                         <Input placeholder='discount code' type='text' input={ input } onChange={ handleChange }></Input>
                         <Button variant='primary' onClick={ handleSubmit }>Continue</Button>
