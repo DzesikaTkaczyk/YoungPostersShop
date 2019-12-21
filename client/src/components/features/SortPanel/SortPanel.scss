@@ -34,15 +34,17 @@
 
 @media(min-width: 768px) {
   .sortpanel {
-    display: inline-block;
+    display: block;
 
     .sortOptions {
 		flex-wrap: wrap;
+		display: block;
 	}
 	
 	a {
-		padding: 5px 0;
+		padding: 5px 15px 5px 0;
 		display: block;
+		wrap: nowrap;
 		&:hover {
 			color: $color-text;
 		}

@@ -1,0 +1,33 @@
+@import '../../../styles/settings.scss';
+
+.itemscount {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+
+	button {
+		background: $color-background;
+		border: none;
+	}
+	.plusandminus {
+		display: flex;
+		color: $color-text;
+		display: inline-flex;
+		justify-content: flex-end;
+		.counter {
+			color: $color-text-bright;
+			height: 33px;
+			width: 33px;
+			border: 1px solid $color-text-bright;
+			text-align: center;
+		}
+	}	
+	.remove {
+		display: flex;
+		color: $color-error; 
+		font-size: 14px;
+		justify-content: flex-end;
+		margin-top: 20px;
+	}
+}

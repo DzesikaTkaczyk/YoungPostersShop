@@ -1,14 +1,21 @@
-  import { connect } from 'react-redux';
-import { getProducts, getRequest, loadCartRequest } from '../../../redux/productsRedux';
+import { connect } from 'react-redux';
+import { getCart, getSumPrice, more, less, sumPrice, removeProduct, addDiscountCode , getDiscountStatus, getRequest, loadCartRequest, endRequest } from '../../../redux/productsRedux';
 import Cart from './Cart';
 
 const mapStateToProps = state => ({
-  products: getProducts(state),
-  request: getRequest(state),
+	cart: getCart(state),
+	price: getSumPrice(state),
+	discountStatus: getDiscountStatus(state),
+	request: getRequest(state),
 })
 
 const mapDispatchToProps = dispatch => ({
-  loadProducts: () => dispatch(loadCartRequest()),
+	loadCart: () =>dispatch(loadCartRequest()),
+	more: (id) => dispatch(more(id)),
+	less: (id) => dispatch(less(id)),
+	removeProduct: (id) => dispatch(removeProduct()),
+	addDiscountCode: () => dispatch(addDiscountCode()),
+	sumPrice: () => dispatch(sumPrice()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

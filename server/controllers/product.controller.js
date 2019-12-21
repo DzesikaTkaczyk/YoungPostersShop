@@ -33,3 +33,15 @@ exports.getProductsByRange = async function (req, res) {
     res.status(500).json(err);
   }
 };
+
+exports.getCart = async (req, res) => {
+	console.log("req")
+	console.log(req)
+	console.log("res")
+	console.log(res)
+	try {
+		res.status(200).json(await Product.find());
+	} catch(err) {
+		res.status(500).json(err);
+	}
+};

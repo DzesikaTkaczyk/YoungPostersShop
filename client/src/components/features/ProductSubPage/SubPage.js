@@ -6,13 +6,29 @@ import '../../../styles/layout.scss';
 
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
-//import addProduct from './buttonFunction.js'
-
 
 class SingleProduct extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      orderAlert: false
+    }
+    this.showAlert = this.showAlert.bind(this);
+  }
+
+  showAlert() {
+    this.setState({orderAlert: true})
+  }
+
   componentDidMount() {
     const { loadProduct, id } = this.props;
     loadProduct(id);
+  }
+
+  handleAddToCart = () => {
+    const { product, cart, addToCart, more, sumPrice, id } = this.props
+    const addedToCart = cart.filter(product => product.id === id);
+    addToCart(product);
   }
 
   render() {
@@ -51,7 +67,7 @@ class SingleProduct extends React.Component {
                     </div>
                     <p className='price'>{product.price}zł</p>
                   </div>
-                  <button> Add to cart </button>
+                  <button onClick={this.handleAddToCart}> Add to cart </button>
                 </div>
               </div>
             </div>         
@@ -74,9 +90,13 @@ SingleProduct.propTypes = {
       price: PropTypes.number.isRequired,
       image: PropTypes.string.isRequired,
       carusel: PropTypes.array,
+      counter: PropTypes.number.isRequired
     })
   ),
-  loadProduct: PropTypes.func.isRequired
+  loadProduct: PropTypes.func.isRequired,
+  addToCart: PropTypes.func.isRequired,
+  more: PropTypes.func.isRequired,
+  cart: PropTypes.array.isRequired
 };
 
 export default withRouter(props => <SingleProduct {...props}/>);
