@@ -123,7 +123,6 @@ export default function reducer(statePart = initialState, action = {}) {
 		case ADD_TO_CART:
 			const selectedProduct = action.payload;
 			selectedProduct.counter += 1;
-
 			return { ...statePart, cart: statePart.cart.concat(selectedProduct)};
 		case MORE:
 			const wantMore = statePart.cart.find(product => product.id === action.id);

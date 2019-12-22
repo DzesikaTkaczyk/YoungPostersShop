@@ -11,6 +11,7 @@ const CartProduct = (props) => {
 	const { product, handleRemove, handleMore, handleLess } = props;
     console.log("props w cartProduct")
     console.log(props);
+    console.log(product)
 
     return (
         <div className='row'>
