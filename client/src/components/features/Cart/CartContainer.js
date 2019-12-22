@@ -15,6 +15,7 @@ const mapDispatchToProps = dispatch => ({
 	removeProduct: (id) => dispatch(removeProduct(id)),
 	addDiscountCode: () => dispatch(addDiscountCode()),
 	sumPrice: () => dispatch(sumPrice()),
+	loadCart: () => dispatch(loadCartRequest())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);
