@@ -110,9 +110,7 @@ export default function reducer(statePart = initialState, action = {}) {
 
 		case LOAD_CART:
 			return {
-				...statePart,
-				amount: action.payload.amount,
-				cart: [...action.payload.cart], };
+				...statePart, cart: action.payload };
 
 		case SORT_PRODUCTS:
 			return {
@@ -209,6 +207,22 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
   };
 };
 
+export const addToCartRequest = (cart) => {
+  return async dispatch => {
+
+    dispatch(startRequest());
+    try {
+
+      let res = await axios.post(`${API_URL}/cart`, cart);
+      dispatch(endRequest());
+
+    } catch(e) {
+      dispatch(errorRequest(e.message));
+    }
+
+  };
+};
+
 
 export const loadCartRequest = () => {
   return async dispatch => {
@@ -217,9 +231,6 @@ export const loadCartRequest = () => {
     try {
       let res = await axios.get(`${API_URL}/cart`);
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
-
-      console.log('gora')
-      console.log(res)
 
       dispatch(loadCart(res.cart));
       dispatch(endRequest());

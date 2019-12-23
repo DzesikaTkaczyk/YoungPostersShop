@@ -12,7 +12,7 @@ class SingleProduct extends React.Component {
     super(props);
     this.state = {
       orderAlert: false
-    }
+    };
     this.showAlert = this.showAlert.bind(this);
   }
 
@@ -21,28 +21,23 @@ class SingleProduct extends React.Component {
   }
 
   componentDidMount() {
-    const { loadProduct, id } = this.props;
+    const { loadProduct, id, product } = this.props;
     loadProduct(id);
   }
 
-  handleAddToCart = () => {
-    const { product, cart, addToCart, more, sumPrice, match} = this.props
-    const isAdded = cart.filter(product => product.id === match.params.id);
-    console.log("handleaddtocar")
-    console.log(this.props)
-    console.log(product)
-    console.log(cart)
+
+
+  AddToCart = (e) => {
+    const { product, cart, addToCart } = this.props
     
-   if(isAdded.length === 0) {
-        addToCart(product);
-        //this.setState({cart: this.props.cart}); nie udana proba
-    } else {
-        more(match.params.id);
-    };
+    console.log(this.props)
+    console.log(product.author)
+    console.log(product.size)
 
-    sumPrice();
-      
-
+    addToCart(product);
+    
+    console.log(cart)
+  
   }
 
   render() {
@@ -51,7 +46,6 @@ class SingleProduct extends React.Component {
     const success = request.success;
     const error = request.error;
     //const { location } = this.props;
-    const { handleAddToCart } = this;
 
     return (
       <div>
@@ -82,7 +76,7 @@ class SingleProduct extends React.Component {
                     </div>
                     <p className='price'>{product.price}zł</p>
                   </div>
-                  <button onClick={this.handleAddToCart}> Add to cart </button>
+                  <button onClick={this.AddToCart}> Add to cart </button>
                 </div>
               </div>
             </div>         
@@ -110,8 +104,6 @@ SingleProduct.propTypes = {
   ),
   loadProduct: PropTypes.func.isRequired,
   addToCart: PropTypes.func.isRequired,
-  more: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired
 };
 
 export default withRouter(props => <SingleProduct {...props}/>);

@@ -10,11 +10,9 @@ import './Cart.scss';
 
 class Cart extends React.Component {
 
-
   componentDidMount() {
     const { loadCart, cart } = this.props;
 console.log("this.props w cart.js component did mount")
-console.log(this.props)
 console.log(cart)
 
     loadCart()
@@ -27,13 +25,15 @@ console.log(cart)
   }
   
   render() {
-    const { cart, price, discountStatus, request } = this.props;
+    const { cart, price, request } = this.props;
     const pending = request.pending;
     const success = request.success;
     const error = request.error;
     
     //PUSTE, PROBLEM 
     console.log(cart)
+    console.log("swinka")
+console.log(cart)
 
     return (
       <div>
@@ -53,10 +53,7 @@ console.log(cart)
         {pending === false && success === true && cart.length === 0 && <Alert variant='info'> Choose something nice :) </Alert>}
         {pending === false && 
           <div className='priceSection'>
-            <Discount
-              discountStatus={discountStatus}
-              AddDiscount={this.AddDiscount}
-            />
+            
             <p>Total: {price}zł</p>
 
             <div className='CartModal'></div>
