@@ -3,9 +3,6 @@ import React, { Component } from 'react'
 import { CartData } from './CartData'
 
 const ProductContext = React.createContext();
-//provider
-
-//consumer
 
 class ProductProvider extends Component {
 	state = {
@@ -28,7 +25,6 @@ class ProductProvider extends Component {
 			},
  			()=>{
 				this.sumPrice();
-				console.log(this.state.products)
 			})
 	}
 
@@ -42,7 +38,6 @@ class ProductProvider extends Component {
 			},
  			()=>{
 				this.sumPrice();
-				console.log(this.state.products)
 			})
 	}
 
@@ -56,7 +51,6 @@ class ProductProvider extends Component {
 			},
  			()=>{
 				this.sumPrice();
-				console.log(this.state.products)
 			})
 	}
 
