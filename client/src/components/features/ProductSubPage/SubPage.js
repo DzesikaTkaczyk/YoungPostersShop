@@ -83,7 +83,6 @@ SingleProduct.propTypes = {
     })
   ),
   loadProduct: PropTypes.func.isRequired,
-  addToCart: PropTypes.func.isRequired,
 };
 
 export default withRouter(props => <SingleProduct {...props}/>);

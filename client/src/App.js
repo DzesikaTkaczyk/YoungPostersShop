@@ -21,7 +21,7 @@ class App extends React.Component {
       <MainLayout>
         <Suspense fallback={<div>Wczytywanie...</div>}>
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route path='/' exact component={Home}/>
             <Route path='/faq' exact component={FAQPage}/>
             <Route path='/rules' exact component={RulesPage}/>
             <Route path='/contact' exact component={Contact} />
