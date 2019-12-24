@@ -2,36 +2,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../styles/layout.scss';
 
-//import './CartItem.scss';
-import CounterProducts from '../CartCalc/CounterProductsContainer'
+import './CartProducts.scss';
+import CounterProducts from '../CartCalc/CounterProducts'
 
 
 
 const CartProduct = (props) => {
-	const { product, handleRemove, handleMore, handleLess } = props;
-    console.log("props w cartProduct")
-    console.log(props);
-    console.log(product)
+	const { product } = props;
 
     return (
         <div className='row'>
-            <div className='col-xs-3 col-sm-3 col-md-2 col-lg-2'>
-                <img src={product.image} alt={product.title} />
-            </div>
-            <div className='col-xs-12 col-sm-6 col-md-6 col-lg-4'>
-                <div className='titleSection'>
-                    <div className='title'>{product.title}</div>
-                    <div>{product.author}</div>
+            <div className='col-xs-3 col-sm-2 col-md-2 col-lg-2'>
+                <div className='cartImg'>
+                	<img src={product.image} alt={product.title} />
                 </div>
-                <p>{product.size}cm</p>
-                <p>{product.price}zł</p>
+            </div>
+            <div className=' col-xs-9 col-offset-sm-1 col-sm-9 col-offset-sd-1 col-md-9 col-offset-lg-1 col-lg-9'>
+            	<div className='description'>
+	                <div className='titleSection'>
+	                    <div className='title'>{product.title}</div>
+	                    <div className='author'>{product.author}</div>
+	                </div>
+	                <div className='details'>
+		                <p className='size'>{product.size}cm</p>
+		                <p className='price'>{product.price}zł</p>
 
-                <CounterProducts
-                    product={product}
-                    handleRemove={handleRemove}
-                    handleMore={handleMore}
-                    handleLess={handleLess}
-                />
+		                <CounterProducts
+		                	className='counterProducts'
+		                    product={product}
+		                />
+		            </div>
+	            </div>
             </div>
         </div>  
     );

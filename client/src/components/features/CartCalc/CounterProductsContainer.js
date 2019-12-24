@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+/*import { connect } from 'react-redux';
 import { getCounter, getCart, getSumPrice, removeProduct, more, less, sumPrice } from '../../../redux/productsRedux';
 
 import CounterProducts from './CounterProducts';
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => ({
     sumPrice: () => dispatch(sumPrice()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CounterProducts);
+export default connect(mapStateToProps, mapDispatchToProps)(CounterProducts);*/

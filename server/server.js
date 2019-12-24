@@ -10,7 +10,6 @@ const loadProductsData = require('./productsData')
 const app = express();
 
 const productRoutes = require('./routes/product.routes');
-const cartRoutes = require('./routes/cart.routes');
 const path = require('path');
 
 
@@ -18,7 +17,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', productRoutes);
-app.use('/api', cartRoutes);
 app.use(helmet());
 
 mongoose.connect(config.DB, { useNewUrlParser: true });

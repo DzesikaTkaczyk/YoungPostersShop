@@ -1,89 +1,56 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-
+import { withRouter } from 'react-router-dom';
 import CartProduct from './CartProduct';
-import Discount from '../CartCalc/CounterProductsContainer'
+import Discount from '../CartCalc/CounterProducts'
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
 import '../../../styles/layout.scss';
 import './Cart.scss';
+import {ProductConsumer} from '../../../context'
 
 class Cart extends React.Component {
-
-  componentDidMount() {
-    const { loadCart, cart } = this.props;
-console.log("this.props w cart.js component did mount")
-console.log(cart)
-
-    loadCart()
-  }
-
-  AddDiscount = () => {
-    const { addDiscountCode, sumPrice } = this.props;
-    addDiscountCode();
-    sumPrice();
-  }
   
   render() {
-    const { cart, price, request } = this.props;
-    const pending = request.pending;
-    const success = request.success;
-    const error = request.error;
-    
-    //PUSTE, PROBLEM 
-    console.log(cart)
-    console.log("swinka")
-console.log(cart)
-
     return (
       <div>
-        {(pending === true || success === null) && <Spinner />}
-        {pending === false && success === true && cart.length > 0 && (
-          cart.map(product => (
-            <div>
-              <CartProduct 
-                products={product}
-                key={product.id}
-                handleRemove={this.handleRemove}
-              />
-            </div>
-          ))
-        )}
-        {pending === false && error !== null  && <Alert variant='error'>Connect error</Alert>}
-        {pending === false && success === true && cart.length === 0 && <Alert variant='info'> Choose something nice :) </Alert>}
-        {pending === false && 
-          <div className='priceSection'>
-            
-            <p>Total: {price}zł</p>
+        <ProductConsumer>
+        {value => {if(value.cost > 0){
+          return(
+            <div className='priceSection'>
+              <h1>Your posters</h1>
+              <ProductConsumer>
+                {value =>{
+                  return value.products.map( product => { 
+                    if(product.counter > 0)
+                      {return (<CartProduct key={product.id} product={product}/>)}
+                  })
+                }}
+              </ProductConsumer>
+              <ProductConsumer>
+                {value =>{
+                  return (<p>Total: {value.cost}zł</p>)  
+                }}
+              </ProductConsumer>
 
-            <div className='CartModal'></div>
-            <div className='buttonPosition'><button className='pay'>Go pay</button></div>
-          </div>
-        }
+              <div className='CartModal'></div>
+              <div className='buttonPosition'>
+                <ProductConsumer>
+                {value => { return(
+                    <button className='pay' onClick={()=>{value.buy()}}>Buy</button>)
+                  }
+                }
+                </ProductConsumer>
+              </div>
+          </div>)
+          } else {
+            return ( <Alert>Your cart is empty. <br/>Pick something nice from our shop :)</Alert>)
+          }
+        }}
+        </ProductConsumer>
       </div>
     )
   }
-};
-
-
-Cart.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      technique: PropTypes.string.isRequired,
-      size: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      carusel: PropTypes.array,
-      counter: PropTypes.number.isRequired
-    })
-  ),
-  loadProduct: PropTypes.func.isRequired,
-  addToCart: PropTypes.func.isRequired,
-  more: PropTypes.func.isRequired,
-  cart: PropTypes.array.isRequired
 };
 
 

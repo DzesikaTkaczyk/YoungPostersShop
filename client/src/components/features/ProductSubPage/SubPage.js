@@ -3,41 +3,20 @@ import { PropTypes } from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import './SubPage.scss'
 import '../../../styles/layout.scss';
+import { ProductProvider,  ProductConsumer } from '../../../context'
 
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
 
 class SingleProduct extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      orderAlert: false
-    };
-    this.showAlert = this.showAlert.bind(this);
-  }
-
-  showAlert() {
-    this.setState({orderAlert: true})
-  }
-
   componentDidMount() {
     const { loadProduct, id, product } = this.props;
     loadProduct(id);
   }
 
-
-
-  AddToCart = (e) => {
-    const { product, cart, addToCart } = this.props
-    
-    console.log(this.props)
-    console.log(product.author)
-    console.log(product.size)
-
-    addToCart(product);
-    
-    console.log(cart)
-  
+  showAlertInfo() {
+    const alert = document.getElementById('alertInfo');
+    alert.style.display = 'block';
   }
 
   render() {
@@ -45,7 +24,6 @@ class SingleProduct extends React.Component {
     const pending = request.pending;
     const success = request.success;
     const error = request.error;
-    //const { location } = this.props;
 
     return (
       <div>
@@ -63,7 +41,7 @@ class SingleProduct extends React.Component {
               </div>
               <div className='col-xs-12 col-sm-6 col-md-7 col-lg-7'> 
                 <div className='description'>
-                  <div className='addToCart'>
+                  <div className='addToCart' id='alertInfo'>
                     <Alert>Added to cart.</Alert>
                   </div>
                   <p className='title titleLine'>{product.title}</p>
@@ -76,7 +54,9 @@ class SingleProduct extends React.Component {
                     </div>
                     <p className='price'>{product.price}zł</p>
                   </div>
-                  <button onClick={this.AddToCart}> Add to cart </button>
+                  <ProductConsumer>
+                    {value => {return <button onClick={()=> {this.showAlertInfo() ;value.addToCart(product.id)}}> Add to cart </button>}}
+                  </ProductConsumer>
                 </div>
               </div>
             </div>         

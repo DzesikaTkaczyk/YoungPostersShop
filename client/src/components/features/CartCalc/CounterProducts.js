@@ -1,10 +1,11 @@
 import React from 'react';
-
+import {ProductConsumer} from '../../../context'
 import './CounterProducts.scss'
+
 
 class CounterProducts extends React.Component {
 
-    handleRemove = () => {
+    /*handleRemove = () => {
         const { product, removeProduct, sumPrice } = this.props;
         removeProduct(product.id);
         sumPrice();
@@ -25,7 +26,7 @@ class CounterProducts extends React.Component {
             less(product.id);
         };
         sumPrice();
-    }
+    }*/
 
     render() {
 
@@ -33,15 +34,20 @@ class CounterProducts extends React.Component {
         console.log("this.props w counterproducts")
         console.log(this.props)
         
-
         return (
             <div className='itemscount'>
-                <div className='plusandminus'>
-                    <button className='minus' onClick={ this.handleLess }>–</button>
-                    <div className='counter'>{this.counter}</div> 
-                    <button className='plus' onClick={ this.handleMore }>+</button>
-                </div>
-                <button className='remove' onClick={ this.handleRemove }>remove item</button>
+                <div className='plusandminus'>                   
+                    <ProductConsumer>
+                        {value => {return <button className='minus' onClick={()=> {value.less(product.id)}}>–</button>}}
+                    </ProductConsumer>
+                    <div className='counter'>{product.counter}</div> 
+                    <ProductConsumer>
+                        {value => {return <button className='plus' onClick={()=> {value.addToCart(product.id)}}>+</button>}}
+                    </ProductConsumer>
+                </div>            
+                <ProductConsumer>
+                    {value => {return <button className='remove' onClick={()=> {value.remove(product.id)}}>remove item</button>}}
+                </ProductConsumer>
             </div>
         );
     }

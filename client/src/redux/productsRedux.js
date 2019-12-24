@@ -17,10 +17,10 @@ export const getProductsSort = ({ products }) => {
 	});
 	return sortedProducts
 };
-export const getCounter = ({ products }) => products.amount;
+/*export const getCounter = ({ products }) => products.amount;
 export const getCart = ({ products }) => products.cart;
 export const getSumPrice = ({ products }) => products.sumPrice;
-export const getDiscountStatus = ({ products }) => products.discountStatus;
+export const getDiscountStatus = ({ products }) => products.discountStatus;*/
 
 // action name creator
 const reducerName = 'products';
@@ -34,15 +34,15 @@ export const END_REQUEST = createActionName('END_REQUEST');
 export const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 export const RESET_REQUEST = createActionName('RESET_REQUEST')
 export const LOAD_PRODUCTS_PAGE = createActionName('LOAD_PRODUCTS_PAGE');
-
-export const LOAD_CART = createActionName('LOAD_CART');
 export const SORT_PRODUCTS = createActionName('SORT_PRODUCTS')
+
+/*export const LOAD_CART = createActionName('LOAD_CART');
 export const ADD_TO_CART = createActionName('ADD_TO_CART');
 export const REMOVE_PRODUCT = createActionName('REMOVE_PRODUCT');
 export const MORE =	createActionName('MORE');
 export const LESS = createActionName('LESS');
 export const DISCOUNT_CODE = createActionName('DISCOUNT_CODE')
-export const SUM_PRICE = createActionName('SUM_PRICE');
+export const SUM_PRICE = createActionName('SUM_PRICE');*/
  
 
 export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
@@ -52,15 +52,15 @@ export const endRequest = () => ({ type: END_REQUEST });
 export const errorRequest = error => ({ error, type: ERROR_REQUEST });
 export const resetRequest = () => ({ type: RESET_REQUEST });
 export const loadProductsByPage = payload => ({ payload, type: LOAD_PRODUCTS_PAGE });
-
-export const loadCart = payload => ({ payload, type: LOAD_CART });
 export const sortProducts = payload => ({ payload, type: SORT_PRODUCTS })
+
+/*export const loadCart = payload => ({ payload, type: LOAD_CART });
 export const addToCart = payload => ({ payload, type: ADD_TO_CART });
 export const removeProduct = payload => ({ payload, type: REMOVE_PRODUCT });
 export const more = id => ({ id, type: MORE });
 export const less = id => ({ id, type: LESS });
 export const addDiscountCode = () => ({ type: DISCOUNT_CODE });
-export const sumPrice = () => ({ type: SUM_PRICE });
+export const sumPrice = () => ({ type: SUM_PRICE });*/
 
 
 
@@ -108,9 +108,6 @@ export default function reducer(statePart = initialState, action = {}) {
 				data: [...action.payload.products], };
 		
 
-		case LOAD_CART:
-			return {
-				...statePart, cart: action.payload };
 
 		case SORT_PRODUCTS:
 			return {
@@ -118,6 +115,9 @@ export default function reducer(statePart = initialState, action = {}) {
 				key: action.payload.key,
 				direction: action.payload.direction };
 
+		/*case LOAD_CART:
+			return {
+				...statePart, cart: action.payload };
 		case ADD_TO_CART:
 			const selectedProduct = action.payload;
 			selectedProduct.counter += 1;
@@ -147,7 +147,7 @@ export default function reducer(statePart = initialState, action = {}) {
 			return { ...statePart, sumPrice: pricesSum };
 		case REMOVE_PRODUCT:
 			const remove = statePart.cart.filter(product => product.id !== action.payload);
-			return { ...statePart, cart: remove }
+			return { ...statePart, cart: remove }*/
 		default:
 			return statePart;
 	};
@@ -159,6 +159,7 @@ export const loadProductsRequest = () => {
 		dispatch(startRequest());
 		try {
 			let res = await axios.get(`${API_URL}/products`);
+			console.log(res.data)
 			dispatch(loadProducts(res.data));
 			dispatch(endRequest());
 		} catch(e) {
@@ -207,13 +208,13 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
   };
 };
 
-export const addToCartRequest = (cart) => {
+/*export const addToCartRequest = (product) => {
   return async dispatch => {
 
     dispatch(startRequest());
     try {
 
-      let res = await axios.post(`${API_URL}/cart`, cart);
+      let res = await axios.post(`${API_URL}/products`, product);
       dispatch(endRequest());
 
     } catch(e) {
@@ -229,7 +230,7 @@ export const loadCartRequest = () => {
     dispatch(startRequest());
     
     try {
-      let res = await axios.get(`${API_URL}/cart`);
+      let res = await axios.get(`${API_URL}/products`);
       await new Promise((resolve, reject) => setTimeout(resolve, 2000));
 
       dispatch(loadCart(res.cart));
@@ -239,4 +240,4 @@ export const loadCartRequest = () => {
       dispatch(errorRequest(e.message));
     }
   };
-};
+};*/
