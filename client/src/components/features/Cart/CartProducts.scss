@@ -1,0 +1,87 @@
+@import '../../../styles/settings.scss';
+
+.cartImg {
+	display: flex;
+	img {
+		width: 120%;
+		border: 1px solid $color-text-bright;
+	}
+}
+
+.description {
+	position: relative;
+	margin-top: 30px;
+	.titleSection {
+		display: flex;
+		font-size: 24px;
+		.title {
+			font-weight: bold;
+			margin-right: 15px;
+		}
+	}
+
+	.details {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		.counterProducts {
+			display: inline-flex;
+		}
+
+		p {		
+			margin: 0;
+		}
+
+		.price {
+			display: inline-flex;
+			color: $color-text-bright;
+		}
+	}
+}
+
+@media(max-width: 575px) {
+	.cartImg {
+		display: flex;
+		overflow: hidden;
+		img {
+			height: 150px;
+			width: auto;
+			position: relative;
+			left: -25%;
+			border: 1px solid $color-text-bright;
+		}
+	}
+
+	.details {
+		.size {
+			display: none;
+		}
+	}
+
+	.description {
+		.titleSection {
+			display: block;
+		}
+	}
+}
+
+@media(min-width: 576px) {
+	.cartImg {
+		display: flex;
+		img {
+			width: 120%;
+			border: 1px solid $color-text-bright;
+		}
+	}
+	.details {
+		.size {
+			display: inline-flex;
+		}
+	}
+
+	.description {
+		.titleSection {
+			display: flex;
+		}
+	}
+}

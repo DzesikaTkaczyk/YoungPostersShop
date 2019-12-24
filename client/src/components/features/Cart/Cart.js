@@ -1,48 +1,57 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-
-import CartList from '../CartList/CartList';
+import { withRouter } from 'react-router-dom';
+import CartProduct from './CartProduct';
+import Discount from '../CartCalc/CounterProducts'
 import Spinner from '../../common/Spinner/Spinner';
 import Alert from '../../common/Alert/Alert';
+import '../../../styles/layout.scss';
+import './Cart.scss';
+import {ProductConsumer} from '../../../context'
 
 class Cart extends React.Component {
-  componentDidMount() {
-    const { loadProducts } = this.props;
-    loadProducts();
-  }
-
+  
   render() {
-    const { products, request } = this.props;
-    const pending = request.pending;
-    const success = request.success;
-    const error = request.error;
-
     return (
       <div>
-        {(pending === true || success === null) && <Spinner />}
-        {pending === false && success === true && products.length > 0 && <CartList products={products} />}
-        {pending === false && error !== null  && <Alert variant='error'>Connect error</Alert>}
-        {pending === false && success === true && products.length === 0 && <Alert variant='info'>No products</Alert>}
+        <ProductConsumer>
+        {value => {if(value.cost > 0){
+          return(
+            <div className='priceSection'>
+              <h1>Your posters</h1>
+              <ProductConsumer>
+                {value =>{
+                  return value.products.map( product => { 
+                    if(product.counter > 0)
+                      {return (<CartProduct key={product.id} product={product}/>)}
+                  })
+                }}
+              </ProductConsumer>
+              <ProductConsumer>
+                {value =>{
+                  return (<p>Total: {value.cost}zł</p>)  
+                }}
+              </ProductConsumer>
+
+              <div className='CartModal'></div>
+              <div className='buttonPosition'>
+                <ProductConsumer>
+                {value => { return(
+                    <button className='pay' onClick={()=>{value.buy()}}>Buy</button>)
+                  }
+                }
+                </ProductConsumer>
+              </div>
+          </div>)
+          } else {
+            return ( <Alert>Your cart is empty. <br/>Pick something nice from our shop :)</Alert>)
+          }
+        }}
+        </ProductConsumer>
       </div>
     )
   }
 };
 
-Cart.propTypes = {
-  products: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      technique: PropTypes.string.isRequired,
-      size: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      image: PropTypes.string.isRequired,
-      tag: PropTypes.string,
-    })
-  ),
-  loadProducts: PropTypes.func.isRequired,
-  resetRequest: PropTypes.func.isRequired,
-};
 
 export default Cart;

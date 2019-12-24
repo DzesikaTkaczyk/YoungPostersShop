@@ -11,7 +11,6 @@ class Product extends React.Component {
     return(
       <div className='col-xs-12 col-sm-6 col-md-6 col-lg-4' >
         <div className='productBox'>
-        
           <Link to={`/${id}`}>
             <div className='productCover'>
               <div className='whitebox'/>
@@ -29,7 +28,6 @@ class Product extends React.Component {
               <div className='heartHover'><ion-icon name="heart"></ion-icon></div>
             </div>
           </Link>
-          
         </div>
       </div>
 

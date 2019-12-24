@@ -11,6 +11,7 @@ const Product = new Schema({
 	image: { type: 'String', required: true },
 	carusel: { type: 'Array', required: false },
 	tag: { type: 'String', required: false },
+	counter: { type: 'Number', required: true }
 });
 
 module.exports = mongoose.model('Product', Product);

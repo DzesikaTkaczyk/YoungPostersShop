@@ -14,6 +14,7 @@ class NavBar extends React.Component {
 			{ path: '/faq', title: 'FAQ' },
 			{ path: '/rules', title: 'Rules' },
 			{ path: '/contact', title: 'Contact' },
+			{ path: '/cart', title: 'Cart'}
 		],
 	}
 	render() {
@@ -26,7 +27,6 @@ class NavBar extends React.Component {
 					<Navbar.Collapse id="basic-navbar-nav">
 						<Nav className="mr-auto">
 							<MainMenu links={links}/>
-							<Nav.Link href='/cart' className='cartLink'> <img src={basket} alt="Cart" className="cart"/></Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>

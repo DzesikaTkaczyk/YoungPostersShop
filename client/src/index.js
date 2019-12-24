@@ -5,13 +5,16 @@ import './styles/global.scss';
 import 'animate.css/animate.min.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import {ProductProvider} from './context'
 import store from './redux/store';
 
 const Root = () => (
 	<Provider store={store}>
-		<Router>
-			<App />
-		</Router>
+		<ProductProvider>	
+			<Router>
+				<App />
+			</Router>
+		</ProductProvider>		
 	</Provider>
 );
 

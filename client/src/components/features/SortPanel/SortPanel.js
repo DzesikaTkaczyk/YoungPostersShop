@@ -16,9 +16,9 @@ const SortPanel = () => (
 					<Nav.Link className='sortOption' >Price</Nav.Link>
 					<Nav.Link className='sortOption'>Kosowski</Nav.Link>
 					<Nav.Link className='sortOption'>Matiszu</Nav.Link>
-					<Nav.Link>Podkoscielny</Nav.Link>
-					<Nav.Link>Skwarska</Nav.Link>		
-					<Nav.Link>Wiur</Nav.Link>
+					<Nav.Link className='sortOption'>Podkoscielny</Nav.Link>
+					<Nav.Link className='sortOption'>Skwarska</Nav.Link>		
+					<Nav.Link className='sortOption'>Wiur</Nav.Link>
 				</Navbar.Collapse>
 			</div>
 		</div>

@@ -16,7 +16,8 @@ const loadProductsData = async () => {
       '/posters/bartekKosowski/lolita2.jpg', 
       '/posters/bartekKosowski/lolita3.jpg'
       ],
-      tag: 'New'
+      tag: 'New',
+      counter: 0
     },
     {
       id: '2',
@@ -30,6 +31,7 @@ const loadProductsData = async () => {
       '/posters/patrycjaPodkoscielny/change.jpg', 
       '/posters/patrycjaPodkoscielny/change2.jpg'
       ],
+      counter: 0
     },
     {
       id: '3',
@@ -43,6 +45,7 @@ const loadProductsData = async () => {
       '/posters/wiur/goldenHand.jpg', 
       '/posters/wiur/goldenHand2.jpg'
       ],
+      counter: 0
     },
     {
       id: '4',
@@ -56,7 +59,8 @@ const loadProductsData = async () => {
       '/posters/matiszu/mountains.jpg', 
       '/posters/matiszu/mountains2.jpg'
       ],
-      tag: 'New'
+      tag: 'New',
+      counter: 0
     },
     {
       id: '5',
@@ -66,6 +70,7 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 120,
       image: '/posters/dagaSkwarska/koiFish.jpg',
+      counter: 0
     },
     {
       id: '6',
@@ -80,7 +85,8 @@ const loadProductsData = async () => {
       '/posters/bartekKosowski/jaws2.jpg', 
       '/posters/bartekKosowski/jaws3.jpg'
       ],
-      tag: 'New'
+      tag: 'New',
+      counter: 0
     },
     {
       id: '7',
@@ -94,6 +100,7 @@ const loadProductsData = async () => {
       '/posters/patrycjaPodkoscielny/flora.jpg', 
       '/posters/patrycjaPodkoscielny/flora2.jpg'
       ],
+      counter: 0
     },
     {
       id: '8',
@@ -108,6 +115,7 @@ const loadProductsData = async () => {
       '/posters/wiur/king2.jpg',
       '/posters/wiur/king3.jpg',
       ],
+      counter: 0
     },
     {
       id: '9',
@@ -122,6 +130,7 @@ const loadProductsData = async () => {
       '/posters/matiszu/smoke2.jpg',
       ],
       tag: 'New',
+      counter: 0
     },
     {
       id: '10',
@@ -131,6 +140,7 @@ const loadProductsData = async () => {
       size: '70/50',
       price: 120,
       image: '/posters/dagaSkwarska/3face.jpg',
+      counter: 0
     },
     {
       id: '11',
@@ -145,7 +155,8 @@ const loadProductsData = async () => {
       '/posters/bartekKosowski/shining2.jpg', 
       '/posters/bartekKosowski/shining3.jpg'
       ],
-      tag: 'New'
+      tag: 'New',
+      counter: 0
     },
     {
       id: '12',
@@ -159,6 +170,7 @@ const loadProductsData = async () => {
       '/posters/patrycjaPodkoscielny/margottenenbaum.jpg', 
       '/posters/patrycjaPodkoscielny/margottenenbaum2.jpg'
       ],
+      counter: 0
     },
     {
       id: '13',
@@ -172,7 +184,8 @@ const loadProductsData = async () => {
       '/posters/wiur/goldenJezus.jpg', 
       '/posters/wiur/goldenJezus2.jpg'
       ],
-      tag: 'Wow'
+      tag: 'Wow',
+      counter: 0
     },
     {
       id: '14',
@@ -181,7 +194,8 @@ const loadProductsData = async () => {
       technique: 'Print',
       size: '70/50',
       price: 120,
-      image: '/posters/dagaSkwarska/goodGirl.jpg'
+      image: '/posters/dagaSkwarska/goodGirl.jpg',
+      counter: 0
     },
     {
       id: '15',
@@ -196,6 +210,7 @@ const loadProductsData = async () => {
       '/posters/patrycjaPodkoscielny/strangerThings2.jpg',
       '/posters/patrycjaPodkoscielny/strangerThings3.jpg',
       ],
+      counter: 0
     },
     {
       id: '16',
@@ -209,6 +224,7 @@ const loadProductsData = async () => {
       '/posters/wiur/queen.jpg', 
       '/posters/wiur/queen2.jpg'
       ],
+      counter: 0
     },
   ];
 
