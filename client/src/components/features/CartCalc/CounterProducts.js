@@ -1,32 +1,9 @@
 import React from 'react';
-import {ProductConsumer} from '../../../context'
+import { ProductConsumer } from '../../../context'
 import './CounterProducts.scss'
 
 
 class CounterProducts extends React.Component {
-
-    /*handleRemove = () => {
-        const { product, removeProduct, sumPrice } = this.props;
-        removeProduct(product.id);
-        sumPrice();
-    }
-
-    handleMore = () => {
-        const { product, more, sumPrice } = this.props;
-        more(product.id);
-        sumPrice();
-    }
-
-    handleLess = () => {
-        const { product, less, removeProduct, sumPrice } = this.props;
-
-        if(product.counter === 1) {
-            removeProduct(product.id);
-        } else {
-            less(product.id);
-        };
-        sumPrice();
-    }*/
 
     render() {
 

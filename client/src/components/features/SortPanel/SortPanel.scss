@@ -5,6 +5,7 @@
   .sortpanel {
     display: block;
     border-bottom: 1px solid $color-text-bright;
+    width:100%;
 
 	.sortBurger {
 		position: absolute;
@@ -38,13 +39,13 @@
 
     .sortOptions {
 		flex-wrap: wrap;
-		display: block;
 	}
 	
 	a {
 		padding: 5px 15px 5px 0;
-		display: block;
-		wrap: nowrap;
+		width:100%;
+		flex-wrap: nowrap;
+		overflow: hidden;
 		&:hover {
 			color: $color-text;
 		}

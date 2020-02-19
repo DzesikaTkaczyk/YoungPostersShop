@@ -207,37 +207,3 @@ export const loadProductsByPageRequest = (page, productsPerPage) => {
     }
   };
 };
-
-/*export const addToCartRequest = (product) => {
-  return async dispatch => {
-
-    dispatch(startRequest());
-    try {
-
-      let res = await axios.post(`${API_URL}/products`, product);
-      dispatch(endRequest());
-
-    } catch(e) {
-      dispatch(errorRequest(e.message));
-    }
-
-  };
-};
-
-
-export const loadCartRequest = () => {
-  return async dispatch => {
-    dispatch(startRequest());
-    
-    try {
-      let res = await axios.get(`${API_URL}/products`);
-      await new Promise((resolve, reject) => setTimeout(resolve, 2000));
-
-      dispatch(loadCart(res.cart));
-      dispatch(endRequest());
-
-    } catch(e) {
-      dispatch(errorRequest(e.message));
-    }
-  };
-};*/

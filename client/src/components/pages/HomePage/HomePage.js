@@ -2,7 +2,7 @@ import React from 'react';
 import '../../../styles/layout.scss';
 
 import Products from '../../features/Products/ProductsContainer';
-import SortPanel from '../../features/SortPanel/SortPanel';
+import SortPanel from '../../features/SortPanel/SortPanelContainer';
 
 const HomePage = () => (
 	<div className='row'>
