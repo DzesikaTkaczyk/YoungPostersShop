@@ -9,8 +9,6 @@ const SortPanel = ({ sortProducts }) => {
 		sortProducts({ key, direction });
 	}
 
-
-
 	return (
 		<Navbar expand="md">
 			<div className='sortpanel'>
